@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= turtle.name %></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <p><b>Name:</b> <%= turtle.name %></p>
+        <p><b>Color:</b> <%= turtle.color %></p>
+        <p>
+            <a href="/turtles/edit/<%= turtle._id %>">Edit</a> | 
+            <a href="/">Home</a>
+        </p>
+        <form action="/turtles/destroy/<%= turtle._id %>" method="post">
+            <input type="submit" value="Delete Turtle">
+        </form>
+    </body>
+</html>

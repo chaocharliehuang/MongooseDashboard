@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit Turtle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Edit Turtle:</h1>
+        <% if (typeof(errors) != 'undefined') { %>
+            <h4>ERRORS:</h4>
+            <% for (var error in errors) { %>
+                <p><%= errors[error].message %></p>
+            <% } %>
+        <% } %>
+        <form action="/turtles/<%= turtle._id %>" method="post">
+            <p>
+                <label for="name">Turtle name: </label>
+                <input type="text" name="name" id="name" value=<%= turtle.name %>>
+            </p>
+            <p>
+                <label for="color">Turtle color: </label>
+                <input type="text" name="color" id="color" value=<%= turtle.color %>>
+            </p>
+            <p>
+                <input type="submit" value="Update turtle!">
+            </p>
+        </form>
+        <p><a href="/">Home</a></p>
+    </body>
+</html>
